@@ -24,7 +24,6 @@ function App() {
     }
     const splitted = contentList.split('\n').filter((item) => item.trim() !== '');
     const selectedContent = splitted[currentIndexRef.current];
-    console.log(currentIndexRef.current);
     if(!selectedContent){
       currentIndexRef.current = 0;
     } else {
@@ -76,7 +75,7 @@ function App() {
     const id = setInterval(() => {
       makeAPICall();
     }, timeInterval * 60 * 1000);
-
+    window.alert('Sending Message')
     setIntervalId(id);
   };
 
@@ -117,13 +116,13 @@ function App() {
         <label>
           Enter Content List (one item per line):
           <textarea
-            rows="5"
+            rows="20"
             value={contentList}
             onChange={handleContentListChange}
           />
         </label>
         <button onClick={submit}>Send Message</button>
-        <button onClick={stop}>Stop Send Message</button>
+        <button onClick={stop}>Stop Sending Message</button>
       </div>
     </div>
   );
