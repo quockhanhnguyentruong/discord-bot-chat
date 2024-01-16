@@ -72,9 +72,12 @@ function App() {
   };
 
   const submit = () => {
+    makeAPICall();
+  
     const id = setInterval(() => {
       makeAPICall();
     }, timeInterval * 60 * 1000);
+    
     window.alert('Sending Message')
     setIntervalId(id);
   };
